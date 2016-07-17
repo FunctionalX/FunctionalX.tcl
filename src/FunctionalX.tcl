@@ -11,7 +11,7 @@ proc range_aux {start end step accum} {
 }
 
 proc range {start end {step 1}} {
-    return [range_aux $start $end $step]
+    return [range_aux $start $end $step {}]
 }
 
 proc head {s} {
