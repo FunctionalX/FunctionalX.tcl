@@ -43,16 +43,16 @@ proc map {f s} {
 }
 
 
-proc mapv_aux {f s args accum} {
+proc mapv_aux {f s extra_args accum} {
     if {[llength $s] == 0} {
         return $accum
     } else {
-        return [mapv_aux $f [tail $s] $args [concat $accum [list [$f [head $s] $args]]]]
+        return [mapv_aux $f [tail $s] $extra_args [concat $accum [list [$f [head $s] $extra_args]]]]
     }
 }
 
-proc mapv {f s args} {
-    return [mapv_aux $f $s $args {}]
+proc mapv {f s extra_args} {
+    return [mapv_aux $f $s $extra_args {}]
 }
 
 namespace export range head tail map mapv   
