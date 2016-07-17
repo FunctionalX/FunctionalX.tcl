@@ -1,3 +1,5 @@
+package provide FunctionalX 0.0.1
+
 namespace eval FunctionalX {
 
 proc range_aux {start end step accum} {
