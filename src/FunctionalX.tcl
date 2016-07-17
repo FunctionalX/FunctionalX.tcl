@@ -44,7 +44,6 @@ proc map {f s} {
 
 
 proc mapv_aux {f s args accum} {
-    puts $s
     if {[llength $s] == 0} {
         return $accum
     } else {
@@ -53,7 +52,7 @@ proc mapv_aux {f s args accum} {
 }
 
 proc mapv {f s args} {
-    return [mapv_aux $f $s $args]
+    return [mapv_aux $f $s $args {}]
 }
 
 namespace export range head tail map mapv   
