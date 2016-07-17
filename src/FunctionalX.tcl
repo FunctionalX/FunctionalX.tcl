@@ -44,6 +44,7 @@ proc map {f s} {
 
 
 proc mapv_aux {f s args accum} {
+    puts $s
     if {[llength $s] == 0} {
         return $accum
     } else {
